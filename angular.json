@@ -21,7 +21,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "styles": [],
-            "scripts": []
+            "scripts": [],
+            "assets": ["src/assets"]
           },
           "configurations": {
             "production": {

@@ -1,0 +1,6 @@
+{
+  "static": {
+    "title": "Typed nx-translate example",
+    "description": "This simple Angular app demonstrates how to add TypeScript typing to the ngx-translate service and pipe."
+  }
+}

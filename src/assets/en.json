@@ -1,6 +1,9 @@
 {
   "static": {
-    "title": "Typed nx-translate example",
-    "description": "This simple Angular app demonstrates how to add TypeScript typing to the ngx-translate service and pipe."
+    "title": "Typed {{name}} example",
+    "description": "This simple Angular app demonstrates how to add TypeScript typing to the ngx-translate service and pipe.",
+    "AppComponent": {
+      "someScopedTranslation": "This translation is explicitly scoped to the AppComponent."
+    }
   }
 }

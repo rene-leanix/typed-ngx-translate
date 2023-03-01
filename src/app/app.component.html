@@ -1,2 +1,5 @@
-<h1>{{ 'static.title' | translate }}</h1>
+<!-- Check out the type checking and autocompletion for the following translation key: -->
+<h1>{{ 'static.title' | typedTranslate : { name: 'nx-translate' } }}</h1>
 <p>{{ description$ | async }}</p>
+<!-- Angular does not yet use a template literal type for concatenated strings, which is why an array is used instead for this case -->
+<p>{{ ['static', NAME, 'someScopedTranslation'] | typedTranslate }}</p>

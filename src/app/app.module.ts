@@ -1,9 +1,11 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppComponent } from './app.component';
+import { TypedTranslateService } from './models/typed-translate.service';
+import { TypedTranslatePipe } from './pipes/lx-translate.pipe';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -11,7 +13,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TypedTranslatePipe],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -23,6 +25,12 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     })
+  ],
+  providers: [
+    {
+      provide: TypedTranslateService,
+      useClass: TranslateService
+    },
   ],
   bootstrap: [AppComponent]
 })
